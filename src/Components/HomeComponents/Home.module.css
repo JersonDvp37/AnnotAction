@@ -279,7 +279,7 @@
 }
 .searchTool input{
     width: 550px;
-    padding: 0.7rem 2.5rem;
+    padding: 0.7rem 2.5rem;  
     margin-left: 5px;
     outline: none;
     border: none;
@@ -310,4 +310,223 @@
     margin: 0 auto;
     align-items: center;
     display: flex;
+}
+
+/* =======================================
+   🌐 RESPONSIVIDADE - LAYOUT PRINCIPAL
+   ======================================= */
+
+/* Tablets (até 992px) */
+@media (max-width: 992px) {
+    .home-layout-conteiner {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 15px;
+    }
+
+    .category_conteiner,
+    .RecentNotes_conteiner {
+        min-width: 90%;
+        max-width: 95%;
+    }
+
+    .main-layout-conteiner {
+        height: auto;
+        padding-bottom: 2rem;
+    }
+
+    .myNotes-conteiner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tool-conteiner {
+        width: 95%;
+    }
+
+    .searchTool input {
+        width: 80%;
+    }
+}
+
+/* Smartphones (até 768px) */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 0.5rem;
+        overflow-y: auto;
+    }
+
+    .home-layout-conteiner {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+
+    .category_conteiner,
+    .RecentNotes_conteiner {
+        min-width: 100%;
+        max-width: 100%;
+        order: 2; /* move os painéis abaixo */
+    }
+
+    .tool-conteiner {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .searchTool input {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .myNotes-conteiner {
+        width: 100%;
+        flex-direction: column;
+    }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+    .home-container {
+        padding: 0.3rem;
+    }
+
+    .searchTool input {
+        font-size: 13px;
+        padding: 0.6rem 2rem;
+    }
+
+    .tool-conteiner {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .category_conteiner,
+    .RecentNotes_conteiner {
+        padding: 0.4rem;
+    }
+}
+
+/* =======================================
+   🌐 RESPONSIVIDADE - TOOLBAR E LISTAS
+   ======================================= */
+
+/* Tablets (até 992px) */
+@media (max-width: 992px) {
+    /* Ajusta o container de ferramentas */
+    .tool-conteiner {
+        height: auto;
+        padding: 10px 15px;
+    }
+
+    .ul-tool {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .ul-tool .span-Tool {
+        font-size: 13px;
+        padding: 0.3rem 0.6rem;
+    }
+
+    /* Campo de pesquisa mais adaptável */
+    .searchTool input {
+        width: 70%;
+        padding: 0.6rem 2rem;
+        font-size: 14px;
+    }
+}
+
+/* Smartphones (até 768px) */
+@media (max-width: 768px) {
+    /* Ferramentas e busca empilhadas */
+    .tool-conteiner {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .ul-tool {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .ul-tool li {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .ul-tool .span-Tool {
+        width: 100%;
+        justify-content: center;
+        font-size: 14px;
+    }
+
+    .searchTool {
+        width: 100%;
+    }
+
+    .searchTool input {
+        width: 100%;
+        padding: 0.6rem 2rem;
+        margin: 10px 0;
+        font-size: 14px;
+    }
+
+    .searchTool img {
+        left: 10px;
+        width: 18px;
+    }
+
+    /* Lista de categorias */
+    .ul_category_list {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .ul-category {
+        padding: 0.4rem 0.6rem;
+        gap: 8px;
+    }
+
+    .ul-category span {
+        font-size: 14px;
+    }
+
+    .category_details {
+        font-size: 11px;
+        gap: 4px;
+    }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+    .ul-tool .span-Tool {
+        font-size: 12px;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .ul-category {
+        gap: 5px;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .ul-category span {
+        font-size: 13px;
+    }
+
+    .category_details {
+        font-size: 10px;
+    }
+
+    .searchTool input {
+        font-size: 13px;
+        padding: 0.5rem 2rem;
+    }
 }
