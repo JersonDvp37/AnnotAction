@@ -49,7 +49,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-
+  overflow: hidden;
   background: none;
 }
 
@@ -63,6 +63,9 @@ main, section, div {
 
 
 /* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+
+
 
   body {
     font-size: 15px;
