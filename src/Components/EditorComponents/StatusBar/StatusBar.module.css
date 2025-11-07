@@ -1,0 +1,50 @@
+:root{
+    --Light_Blue: #3B82F6;
+    --Light_Blue2:rgb(102, 154, 236);
+    --Other_Blue: #f3f6fa;
+    --Other_Blue2: #eaeef3;
+    --Dark_blue: #1E3A8A;
+    --DeepDark_Blue: #030c24;
+    --OpacityDark_Blue: #030c24e7;
+    --White: #FFFFFF;
+    --white_opacity: #ffffffee;
+    --blur: #ffffff85;
+    --line_grey: #a1a1a148;
+    --background_DGreen: #276360;
+    --font_darkgreen: #043a37;
+    --lightGreen: #0f766d2a;
+}
+.statusBar {
+  height: 32px;
+  background-color: var(--font_darkgreen);
+  color: var(--White);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-size: 12px;
+  border-top: 1px solid var(--font_darkgreen);
+  border-radius: 3px 3px 0 0;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rightInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.item {
+  color: var(--White);
+  font-weight: 500;
+}
+
+.separator {
+  color: var(--Other_Blue2);
+  opacity: 0.6;
+}

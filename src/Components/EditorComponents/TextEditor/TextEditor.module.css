@@ -1,0 +1,330 @@
+:root{
+    --Light_Blue: #3B82F6;
+    --Light_Blue2:rgb(102, 154, 236);
+    --Other_Blue: #f3f6fa;
+    --Other_Blue2: #eaeef3;
+    --Dark_blue: #1E3A8A;
+    --DeepDark_Blue: #030c24;
+    --OpacityDark_Blue: #030c24e7;
+    --White: #FFFFFF;
+    --white_opacity: #ffffffee;
+    --blur: #ffffff85;
+    --line_grey: #a1a1a148;
+    --background_DGreen: #276360;
+    --font_darkgreen: #043a37;
+}
+.editorContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.toolbar {
+  border-bottom: 2px solid var(--Other_Blue2);
+  background-color: var(--white_opacity);
+  border-radius: 5px 5px 0px 0px;
+  justify-content: center;
+  display: flex;
+  padding: 0px 0px;
+  height: 5%;
+}
+
+.titleDisplay {
+  display: block;
+  font-size: 20px;
+  font-weight: 650;
+  color: var(--background_DGreen);
+  opacity: 80%;
+  padding: 0px 0;
+  margin: 0;
+  top: 0;
+  height: 5%;
+}
+
+.editor {
+  flex: 1;
+  padding: 15px 15px;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+  overflow-y: auto;
+  min-height: 400px;
+  background-color: var(--white_opacity);
+}
+
+.editor:empty::before {
+  content: attr(data-placeholder);
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.editor h1,
+.editor h2,
+.editor h3,
+.editor h4,
+.editor h5,
+.editor h6 {
+  margin: 16px 0 8px 0;
+  font-weight: 600;
+}
+
+.editor h1 {
+  font-size: 2em;
+}
+.editor h2 {
+  font-size: 1.5em;
+}
+.editor h3 {
+  font-size: 1.25em;
+}
+.editor h4 {
+  font-size: 1.1em;
+}
+.editor h5 {
+  font-size: 1em;
+}
+.editor h6 {
+  font-size: 0.9em;
+}
+
+.editor blockquote {
+  margin: 16px 0;
+  padding: 16px 20px;
+  border-left: 4px solid #0f766e;
+  background-color: #f0fdfa;
+  font-style: italic;
+  position: relative;
+  min-height: 40px;
+}
+
+.editor blockquote::before {
+  content: '"';
+  font-size: 2.5em;
+  color: #0f766e;
+  position: absolute;
+  left: 8px;
+  top: -5px;
+  opacity: 0.3;
+}
+
+.editor code {
+  background-color: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  color: #dc2626;
+}
+
+.editor pre {
+  background-color: #1f2937;
+  color: #f9fafb;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 16px 0;
+  font-family: "Courier New", monospace;
+  position: relative;
+  min-height: 60px;
+  white-space: pre-wrap;
+}
+
+.editor pre::before {
+  content: "{ }";
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  color: #6b7280;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.editor pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  border-radius: 0;
+  display: block;
+  white-space: pre-wrap;
+}
+
+/* Corrigir listas para mostrar bullets e números */
+.editor ul {
+  margin: 16px 0;
+  padding-left: 24px;
+  list-style-type: disc !important;
+}
+
+.editor ol {
+  margin: 16px 0;
+  padding-left: 24px;
+  list-style-type: decimal !important;
+}
+
+.editor li {
+  margin: 4px 0;
+  display: list-item !important;
+}
+
+.editor ul li {
+  list-style-type: disc !important;
+}
+
+.editor ol li {
+  list-style-type: decimal !important;
+}
+
+/* Nested lists */
+.editor ul ul {
+  list-style-type: circle !important;
+  margin: 4px 0;
+}
+
+.editor ul ul ul {
+  list-style-type: square !important;
+}
+
+.editor ol ol {
+  list-style-type: lower-alpha !important;
+  margin: 4px 0;
+}
+
+.editor ol ol ol {
+  list-style-type: lower-roman !important;
+}
+
+.editor a {
+  color: #0f766e;
+  text-decoration: underline;
+}
+
+.editor a:hover {
+  color: #0d5d56;
+}
+
+/* Indentação */
+.editor [style*="margin-left"] {
+  margin-left: 40px !important;
+}
+
+/* Melhorar aparência dos blocos */
+.editor blockquote br {
+  line-height: 1.6;
+}
+
+.editor pre br {
+  line-height: 1.4;
+}
+
+/* Adicionar estilos específicos para highlights e cores */
+.editor .highlight-text {
+  display: inline;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: 0 1px;
+}
+
+/* Garantir que cores de texto sejam preservadas */
+.editor [style*="color"] {
+  color: inherit !important;
+}
+
+/* Melhorar contraste para cores claras */
+.editor [style*="color: #ffffff"] {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para diferentes cores de texto */
+.editor [style*="color: #000000"] {
+  color: #000000 !important;
+}
+.editor [style*="color: #333333"] {
+  color: #333333 !important;
+}
+.editor [style*="color: #6c757d"] {
+  color: #6c757d !important;
+}
+.editor [style*="color: #ffffff"] {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1px 3px;
+  border-radius: 2px;
+}
+.editor [style*="color: #007bff"] {
+  color: #007bff !important;
+}
+.editor [style*="color: #28a745"] {
+  color: #28a745 !important;
+}
+.editor [style*="color: #fd7e14"] {
+  color: #fd7e14 !important;
+}
+.editor [style*="color: #0f766e"] {
+  color: #0f766e !important;
+}
+.editor [style*="color: #dc3545"] {
+  color: #dc3545 !important;
+}
+.editor [style*="color: #6f42c1"] {
+  color: #6f42c1 !important;
+}
+.editor [style*="color: #17a2b8"] {
+  color: #17a2b8 !important;
+}
+.editor [style*="color: #e83e8c"] {
+  color: #e83e8c !important;
+}
+
+/* Estilos específicos para highlights */
+.editor .highlight-text[style*="background-color: #fff3cd"] {
+  background-color: #fff3cd !important;
+  color: #856404 !important;
+  border: 1px solid #ffeaa7;
+}
+
+.editor .highlight-text[style*="background-color: #cce5ff"] {
+  background-color: #cce5ff !important;
+  color: #004085 !important;
+  border: 1px solid #99d3ff;
+}
+
+.editor .highlight-text[style*="background-color: #d4edda"] {
+  background-color: #d4edda !important;
+  color: #155724 !important;
+  border: 1px solid #a3d9a5;
+}
+
+.editor .highlight-text[style*="background-color: #f8d7da"] {
+  background-color: #f8d7da !important;
+  color: #721c24 !important;
+  border: 1px solid #f1aeb5;
+}
+
+/* Melhorar legibilidade em fundos escuros */
+.editor pre .highlight-text {
+  padding: 3px 8px;
+  margin: 0 2px;
+  border-radius: 3px;
+}
+
+.editor blockquote .highlight-text {
+  padding: 2px 6px;
+  margin: 0 1px;
+  border-radius: 3px;
+}
+
+/* Garantir que links coloridos funcionem */
+.editor a[style*="color"] {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+.editor a[style*="color"]:hover {
+  opacity: 0.8;
+  text-decoration-thickness: 2px;
+}

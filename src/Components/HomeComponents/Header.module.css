@@ -1,0 +1,51 @@
+:root{
+    --Light_Blue: #3B82F6;
+    --Light_Blue2:rgb(102, 154, 236);
+    --Other_Blue: #f3f6fa;
+    --Other_Blue2: #eaeef3;
+    --Dark_blue: #1E3A8A;
+    --DeepDark_Blue: #030c24;
+    --OpacityDark_Blue: #030c24e7;
+    --White: #FFFFFF;
+    --white_opacity: #ffffffee;
+    --line_grey: #a1a1a148;
+    --background_DGreen: #276360;
+    --font_darkgreen: #043a37;
+}
+.topHeader{
+    width: 100%;
+    height: auto;
+    background: var(--White);
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+.ul_Header{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding: 8px;
+    list-style: none;
+    margin:  0;
+}
+.ul_Header li{
+    margin: auto 0;
+}
+.AnnotAction_Logo{
+    width: 29px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: var(--font_darkgreen);
+}
+.div-line{
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: var(--line_grey);
+    padding: 0;
+    margin: 0 auto;
+    margin-top: -7px;
+}
+
+
+

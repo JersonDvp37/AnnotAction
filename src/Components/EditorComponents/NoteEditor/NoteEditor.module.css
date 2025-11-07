@@ -1,0 +1,36 @@
+:root{
+    --Light_Blue: #3B82F6;
+    --Light_Blue2:rgb(102, 154, 236);
+    --Other_Blue: #f3f6fa;
+    --Other_Blue2: #eaeef3;
+    --Dark_blue: #1E3A8A;
+    --DeepDark_Blue: #030c24;
+    --OpacityDark_Blue: #030c24e7;
+    --White: #FFFFFF;
+    --white_opacity: #ffffffee;
+    --blur: #ffffff85;
+    --line_grey: #a1a1a148;
+    --background_DGreen: #276360;
+    --font_darkgreen: #043a37;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Other_Blue);
+  padding: 0.4rem;
+}
+
+.createNoteContainr{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}

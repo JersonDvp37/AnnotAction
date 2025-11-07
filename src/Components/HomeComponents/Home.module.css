@@ -1,0 +1,313 @@
+:root{
+    --Light_Blue: #3B82F6;
+    --Light_Blue2:rgb(102, 154, 236);
+    --Other_Blue: #f3f6fa;
+    --Other_Blue2: #eaeef3;
+    --Dark_blue: #1E3A8A;
+    --DeepDark_Blue: #030c24;
+    --OpacityDark_Blue: #030c24e7;
+    --White: #FFFFFF;
+    --white_opacity: #ffffffee;
+    --blur: #ffffff85;
+    --line_grey: #a1a1a148;
+    --background_DGreen: #276360;
+    --font_darkgreen: #043a37;
+}
+.home-container{
+    padding: 0;
+    margin: 0 auto; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    color: var(--Dark_blue);
+    background-color: var(--Other_Blue);
+    backdrop-filter: blur(50px);
+    overflow: hidden;
+    justify-content: center;
+}
+
+.CreateNote-conteiner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 500;
+}
+
+.main-layout-conteiner{
+    width: 100%;
+    height: 700px;
+    backdrop-filter: blur(100px);
+    padding: 0;
+    margin: 0;
+}
+.home-layout-conteiner{
+    max-width: 99%;
+    height: 605px;
+    padding: 0;
+    margin: 6px auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content:left;
+    list-style: none;
+}
+
+.category_conteiner {
+    min-width: 15%;
+    max-width: 25%;
+    background-color: var(--white_opacity);
+    padding: 0;
+    margin: 0 auto;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 0.2rem;
+}
+.Criar-nota {
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 5px;
+    background: linear-gradient(250deg, var(--background_DGreen) , var(--Light_Blue2) );
+    gap: 5px;
+    transition: background 0.5s ease-in-out;
+    cursor: pointer;
+}
+.Criar-nota:hover {
+    background: linear-gradient(250deg, var(--font_darkgreen) , var(--font_darkgreen) );
+}
+.Criar-nota .img-Criar-nota{
+    padding: 0 0.2rem;
+    backdrop-filter: blur(60px);
+    border-radius: 6px;
+    display: flex;
+    margin: auto 0;
+}
+.Criar-nota .span-Criar-nota {
+    font-size: 25px;
+    font-weight: 500;
+    padding: 0.2rem 0.3rem;
+    color: var(--White);
+    display: flex;
+}
+
+.category-title {
+    display: flex;
+    align-items: center;
+    padding: 0 0.1rem;
+    border-radius: 5px;
+    background-color: var(--Other_Blue2);
+    gap: 5px;
+    margin: 0;
+    margin-top: 5px;
+}
+.category-title .imgCategory {
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    background-color: var(--Other_Blue2);
+    border-radius: 6px;
+  
+}
+.category-title .spanCategory {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0.2rem 0.3rem;
+    color: var(--OpacityDark_Blue);
+}
+.line {
+    width: 95%;
+    height: 1px;
+    background-color: var(--background_DGreen);
+    padding: 0;
+    margin: 4px auto;
+    opacity: 20%;
+}
+
+.ul_category_list {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    overflow-y: auto;
+}
+.ul_category_list .li_category_list {
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.ul-category {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    padding: 0 0.6rem;
+    margin: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+.ul-category:hover {
+    background-color: var(--Other_Blue);
+}
+.ul-category img {
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+.ul-category span {
+    font-size: 15px;
+    font-weight: 600;
+    /* color: #333; */
+    color: var(--OpacityDark_Blue);
+    line-height: 1;
+    display: block;
+}
+
+.category_details {
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    margin-left: 25px;
+    color: #666;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+    height: 20px;
+}
+.category_details:hover {
+    background-color: var(--Other_Blue);
+}
+.category_details img{
+    width: 15px;
+    height: 15px;
+    line-height: 1.2;
+}
+
+.RecentNotes_conteiner {
+    min-width: 15%;
+    max-width: 25%;
+    background-color: var(--white_opacity);
+    padding: 0;
+    margin: 0 auto;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 0.2rem;
+}
+
+.savednotes_conteiner {
+    width: 100%;
+    background-color: var(--Other_Blue2);
+    padding: 0rem;
+    border-radius: 15px;
+}
+
+.tool-conteiner {
+    width: 99%;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--white_opacity);
+    padding: 0;
+    margin: 6px auto;
+    box-shadow: 0px 0px 10px var(--line_grey);
+    border: 1px solid var(--line_grey);
+}
+.ul-tool{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: auto 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+}
+.ul-tool li{
+    display: flex;
+    align-items: center;
+    margin: auto 0;
+    padding: 0;
+    justify-content: center;
+    height: 100%;
+}
+.ul-tool .img-Tool{
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+.ul-tool .span-Tool{
+    display: flex;
+    height: 2rem;
+    align-items: center;
+    padding: 0.2rem 0.6rem;
+    border-radius: 5px;
+    background-color: var(--Other_Blue);
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--font_darkgreen);
+}
+.ul-tool .span-Tool:hover{
+    background-color: var(--Other_Blue2);
+}
+.searchTool{
+    position: relative;
+    height: fit-content;
+    margin: 0;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+}
+.searchTool input{
+    width: 550px;
+    padding: 0.7rem 2.5rem;
+    margin-left: 5px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--Other_Blue);
+    color: var(--OpacityDark_Blue);
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.searchTool input:focus{
+    background-color: var(--Other_Blue2);
+}
+.searchTool img{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 20px;
+    padding: 0;
+    height: auto;
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.myNotes-conteiner{
+    width: 99%;
+    padding: 0;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+}

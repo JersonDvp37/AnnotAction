@@ -1,0 +1,179 @@
+Crie uma aplicação React (usando Vite) com React Router DOM, escrita em JSX puro e estilizada com CSS tradicional.
+A aplicação deve representar a base de uma plataforma de portfólios de designers, contendo todas as telas, rotas, layouts e navegação com design minimalista, cores azul e branco, preservação da rolagem entre páginas e organização visual moderna e limpa.
+Não utilize Redux, Zustand, Tailwind, Styled Components ou qualquer outra biblioteca de gerenciamento de estado.
+Use apenas React, React Router, CSS puro e lucide-react para os ícones.
+
+Estrutura e Fluxo de Rotas
+
+Implemente as seguintes rotas principais com React Router:
+A página inicial deve estar em “/” e exibir destaques de designs e designers.
+A rota “/designs” deve ser a galeria principal com um grid de imagens e gifs.
+A rota “/designs/:id” deve exibir os detalhes de um design, incluindo imagens, descrições, avaliações e comentários.
+A rota “/designers” deve listar todos os perfis de designers.
+A rota “/designers/:username” deve mostrar o perfil público de um designer, com seus trabalhos, biografia e redes sociais.
+A rota “/login” deve conter o formulário de login.
+A rota “/register” deve conter o formulário de cadastro de usuário comum.
+A rota “/designer-register” deve conter o formulário de registro de designer, com uploads de arquivos e informações adicionais.
+A rota “/designer” deve ser o dashboard privado do designer, mostrando seus trabalhos em ordem cronológica inversa.
+A rota “/designer/portfolio” deve permitir o gerenciamento do portfólio (adicionar, editar e excluir designs).
+A rota “/admin” deve ser o painel do administrador.
+
+Layouts
+
+Crie dois layouts principais.
+
+O primeiro layout, chamado PublicLayout.jsx, deve ter:
+um cabeçalho com o logotipo textual “Portfolios” e navegação para Home, Galeria, Designers, Login e Register.
+um rodapé simples centralizado.
+um container principal centralizado com largura máxima de 1200px.
+um fundo branco com leve sombra nas seções.
+
+O segundo layout, chamado DashboardLayout.jsx, deve ser usado para as rotas do designer e do administrador.
+Ele deve conter uma sidebar fixa à esquerda com ícones importados de lucide-react, uma área principal à direita com os cards dos designs dispostos em ordem cronológica inversa e um cabeçalho superior com saudação (“Olá, Designer!”).
+Deve ser totalmente responsivo.
+
+Preservação da Posição de Rolagem
+
+Crie um componente chamado ScrollRestoration.jsx com a seguinte lógica em JSX:
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+export default function ScrollRestoration() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const savedY = sessionStorage.getItem(pathname);
+    if (savedY) window.scrollTo(0, Number(savedY));
+    return () => sessionStorage.setItem(pathname, window.scrollY);
+  }, [pathname]);
+
+  return null;
+}
+
+Esse componente deve ser incluído dentro do App.jsx para garantir que a posição de rolagem anterior da página seja restaurada ao retornar a ela.
+
+Estilo e Design com CSS Puro
+
+Utilize CSS puro (em arquivo index.css ou módulos CSS).
+O design deve ser minimalista, branco predominante e com dois tons de azul.
+
+A paleta de cores deve ser:
+Branco: #FFFFFF
+Azul primário: #007BFF
+Azul secundário: #0056B3
+Cinza claro: #F5F5F5
+Texto: #333333
+
+O estilo geral deve usar a fonte “Inter, sans-serif”.
+O fundo das páginas deve ser branco.
+Os botões devem ter gradiente azul com o padrão linear-gradient(90deg, #007BFF, #0056B3), texto branco, bordas arredondadas e transição suave.
+Os cards devem ter fundo branco, sombra sutil, cantos arredondados, imagem em object-fit: cover e um leve efeito de elevação ao passar o mouse (transform scale(1.02) e transition all 0.3s ease-in-out).
+O grid de imagens nas páginas de galeria e home deve ter três colunas no desktop e uma no mobile.
+O dashboard deve exibir os cards dos trabalhos em ordem cronológica inversa, com espaçamento fluido e margens generosas.
+
+Componentes Reutilizáveis
+
+Crie os seguintes componentes reutilizáveis em JSX puro:
+Navbar.jsx — cabeçalho principal com links de navegação.
+Footer.jsx — rodapé fixo e centralizado.
+Card.jsx — componente visual para exibir designs com imagem, título, autor e botão “ver detalhes”.
+Button.jsx — botão estilizado com gradiente azul.
+CommentSection.jsx — lista de comentários com campo para adicionar novos.
+ScrollRestoration.jsx — componente responsável pela restauração de rolagem (conforme código acima).
+
+Estrutura de Pastas
+
+Organize os arquivos conforme o seguinte padrão:
+
+src/
+├── components/
+│ ├── Navbar.jsx
+│ ├── Footer.jsx
+│ ├── Card.jsx
+│ ├── Button.jsx
+│ ├── CommentSection.jsx
+│ └── ScrollRestoration.jsx
+│
+├── layouts/
+│ ├── PublicLayout.jsx
+│ └── DashboardLayout.jsx
+│
+├── pages/
+│ ├── Home.jsx
+│ ├── Gallery.jsx
+│ ├── DesignDetail.jsx
+│ ├── DesignersList.jsx
+│ ├── DesignerProfile.jsx
+│ ├── Login.jsx
+│ ├── Register.jsx
+│ ├── DesignerRegister.jsx
+│ ├── DesignerDashboard.jsx
+│ ├── PortfolioManager.jsx
+│ └── AdminDashboard.jsx
+│
+├── App.jsx
+├── main.jsx
+├── index.css
+└── assets/
+  └── logo.svg
+
+Configuração do Router (App.jsx)
+O arquivo App.jsx deve conter a configuração completa do React Router conforme o código abaixo:
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollRestoration from "./components/ScrollRestoration";
+import PublicLayout from "./layouts/PublicLayout";
+import DashboardLayout from "./layouts/DashboardLayout";
+import Home from "./pages/Home";
+import Gallery from "./pages/Gallery";
+import DesignDetail from "./pages/DesignDetail";
+import DesignersList from "./pages/DesignersList";
+import DesignerProfile from "./pages/DesignerProfile";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import DesignerRegister from "./pages/DesignerRegister";
+import DesignerDashboard from "./pages/DesignerDashboard";
+import PortfolioManager from "./pages/PortfolioManager";
+import AdminDashboard from "./pages/AdminDashboard";
+
+function App() {
+  return (
+    <Router>
+      <ScrollRestoration />
+      <Routes>
+        <Route element={<PublicLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/designs" element={<Gallery />} />
+          <Route path="/designs/:id" element={<DesignDetail />} />
+          <Route path="/designers" element={<DesignersList />} />
+          <Route path="/designers/:username" element={<DesignerProfile />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/designer-register" element={<DesignerRegister />} />
+        </Route>
+
+        <Route element={<DashboardLayout />}>
+          <Route path="/designer" element={<DesignerDashboard />} />
+          <Route path="/designer/portfolio" element={<PortfolioManager />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+Requisitos de UX e Interação
+
+As transições entre páginas devem ser suaves, utilizando transition all 0.3s ease-in-out.
+A posição de rolagem deve ser restaurada automaticamente ao voltar para uma página anterior.
+Os cards e imagens devem estar sempre centralizados e alinhados visualmente.
+O dashboard deve ter disposição cronológica de cima para baixo, com espaçamento equilibrado.
+A interface deve ser completamente responsiva (mobile-first).
+
+Design Global
+
+O design deve manter fundo branco predominante, com botões e detalhes em tons de azul, ícones importados de lucide-react e uma disposição equilibrada entre os elementos.
+O estilo deve ser minimalista, moderno e agradável, permitindo expansão futura sem dependências extras.
+
+Crie todos os arquivos, rotas, layouts e estilos descritos acima utilizando apenas JSX e CSS puro

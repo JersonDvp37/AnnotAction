@@ -1,0 +1,23 @@
+:root{
+  --Golden_Yollow: #FDBA2D;
+  --Heavy_Orange: #F97316;
+  --Pink: #D946EF;
+  --Light_Blue: #3B82F6;
+  --Dark_blue: #1E3A8A;
+  --White: #FFFFFF;
+}
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: unset;
+}
+body{
+  width: 100%;
+  background-color: var(--White);  
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+img{
+  max-width: 1200px;
+}
